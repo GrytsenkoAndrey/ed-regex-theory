@@ -5,7 +5,7 @@
 # TOC
 
 - [Positive Lookbehind](#details)
-- {Stack Overflow Examples](#so-examples)
+- [Stack Overflow Examples](#so-examples)
 
 Виды Lookbehind и Lookahead:
 
