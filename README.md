@@ -148,13 +148,13 @@ Find expression A where expression B does not precede:
 
 An atomic group exits a group and throws away alternative patterns after the first matched pattern inside the group (backtracking is disabled).
 
-    (?>foo|foot)s applied to foots will match its 1st alternative foo, then fail as s does not immediately follow, and stop as backtracking is disabled
+- (?>foo|foot)s applied to foots will match its 1st alternative foo, then fail as s does not immediately follow, and stop as backtracking is disabled
 
 A non-atomic group will allow backtracking; if subsequent matching ahead fails, it will backtrack and use alternative patterns until a match for the entire expression is found or all possibilities are exhausted.
 
-    (foo|foot)s applied to foots will:
-        match its 1st alternative foo, then fail as s does not immediately follow in foots, and backtrack to its 2nd alternative;
-        match its 2nd alternative foot, then succeed as s immediately follows in foots, and stop.
+- (foo|foot)s applied to foots will:
+     1. match its 1st alternative foo, then fail as s does not immediately follow in foots, and backtrack to its 2nd alternative;
+     2. match its 2nd alternative foot, then succeed as s immediately follows in foots, and stop.
 
 
 
