@@ -2,6 +2,10 @@
 
 ![type-of-regex-PhpStorm](https://github.com/user-attachments/assets/c69980c1-79e8-47f7-8cdd-bff8eda5d274)
 
+# TOC
+
+- [Positive Lookbehind](#details)
+- {Stack Overflow Examples](#so-examples)
 
 Виды Lookbehind и Lookahead:
 
@@ -10,7 +14,7 @@
 - Positive Lookahead ```(?=...)```
 - Negative Lookahead ```(?!...)```
 
-## Подробно о каждом с примерами:
+## Details
 
 ### 1. Positive Lookbehind ```(?<=...)```
 
@@ -95,3 +99,31 @@
 Lookbehind утверждения могут иметь ограничения в некоторых движках регулярных выражений (например, в некоторых случаях не поддерживают переменную длину шаблона).
 
 Lookahead утверждения обычно более гибкие и поддерживаются во многих движках регулярных выражений, включая JavaScript, Python, PHP, и другие.
+
+
+
+## SO Examples
+
+Given the string foobarbarfoo:
+
+```
+bar(?=bar)     finds the 1st bar ("bar" which has "bar" after it)
+bar(?!bar)     finds the 2nd bar ("bar" which does not have "bar" after it)
+(?<=foo)bar    finds the 1st bar ("bar" which has "foo" before it)
+(?<!foo)bar    finds the 2nd bar ("bar" which does not have "foo" before it)
+```
+
+You can also combine them:
+
+```
+(?<=foo)bar(?=bar)    finds the 1st bar ("bar" with "foo" before it and "bar" after it)
+```
+
+
+
+
+
+
+
+
+
